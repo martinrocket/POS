@@ -5,6 +5,7 @@ import (
 	"strings"
 
 	"github.com/martinrocket/POS/Version"
+	"github.com/martinrocket/POS/posMenu"
 )
 
 const (
@@ -21,7 +22,9 @@ const (
 var boxWidth int
 var boxHeight int
 var version = "ver " + Version.GetVersion()
+var menu posMenu.PosFuncs
 
+// BuildBox funtion is exported for use with main POS.go file.
 func BuildBox() {
 	boxWidth = 50
 	boxHeight = 20
@@ -31,4 +34,7 @@ func BuildBox() {
 		fmt.Print("...")
 	}
 	fmt.Println()
+
+	menu.ClockIn = "yes"
+	fmt.Println(menu)
 }
