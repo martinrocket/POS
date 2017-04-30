@@ -5,11 +5,15 @@ import (
 	"fmt"
 
 	ui "github.com/martinrocket/POS/POSUI"
+	pos "github.com/martinrocket/POS/posData"
 )
 
 func main() {
+	ui.ClearScreen()
 	fmt.Println("POS")
-	ui.BuildBox()
+	ui.BuildBox("mainMenu")
+	ui.BuildBox("itemMenuItems")
+	pos.ListItems()
 	fmt.Println("done")
 
 }
